@@ -36,12 +36,15 @@ ALLOWED_HOSTS = ['smart-care-1-aeth.onrender.com', '127.0.0.1']
 CORS_ALLOWED_ORIGINS = [
     'https://smart-care-1-aeth.onrender.com',
     'http://127.0.0.1:5500',
+    
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://smart-care-1-aeth.onrender.com',
     'http://127.0.0.1:5500',
 ]
+CORS_ALLOW_ALL_ORIGINS = True
+
 
 
 
@@ -56,6 +59,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
     'appointment',
     'service',
     'patient',
@@ -71,6 +75,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'smart_care.urls'
