@@ -27,7 +27,7 @@ class SpecializationViewsets(viewsets.ModelViewSet):
     
 class DesignationViewsets(viewsets.ModelViewSet):
     queryset = models.Designation.objects.all()
-    serializer_class = serializers.DoctorSerializers
+    serializer_class = serializers.DesignationSerializers
     
 class AvailableTimeForSpecificDoctor(filters.BaseFilterBackend):
     def filter_queryset(self, request, query_set, view):
